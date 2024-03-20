@@ -40,6 +40,9 @@ Route::middleware('auth.basic')->group(function () {
     Route::get('title_count/{title}', [BookController::class, 'titleCount']);
     Route::get('h_author_title/{hardcovered}', [CopyController::class, 'hAuthorTitle']);
     Route::get('ev/{year}', [CopyController::class, 'ev']);
+//két tábla módosítása egyszerre 
+Route::patch('bring-back/{copy_id}/{start}', [LendingController::class, 'bringBack']); 
+
 });
 
 //guest is láthatja
